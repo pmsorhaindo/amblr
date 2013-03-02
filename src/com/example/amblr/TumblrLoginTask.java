@@ -13,40 +13,47 @@ import org.scribe.oauth.OAuthService;
 
 import android.os.AsyncTask;
 
-public class TumblrLoginTask extends AsyncTask<String,Void,Boolean>
+public class TumblrLoginTask
 {
 	private static final String PROTECTED_RESOURCE_URL = "http://api.tumblr.com/v2/blog/atouchoverrated.tumblr.com/followers";
 	
-	public static void main(String[] args)
-	{
-	System.out.println("Thats it man! Go and build something awesome with Scribe! :)");
+	Scanner in;
+	Token requestToken;
+	private OAuthService service;
+	
+	public TumblrLoginTask(){
+		
+		System.out.println("Instantiation yo!");
+		
+		service = new ServiceBuilder()
+		.provider(TumblrApi.class)
+		.apiKey("WaUMb2iLXPv4jFIV3z58aAYbhUXnxXO2rOw5gPOURIrmMkbup3")
+		.apiSecret("Rlc0dQLFhx8MWyNxRVaPiB8gEBEXQVInyXDjCBe0VPq5QZhOlQ")
+		.build();
+		
+		in = new Scanner(System.in);	
 	}
 	
-	@Override
-	protected Boolean doInBackground(String... params) {
-		OAuthService service = new ServiceBuilder()
-			.provider(TumblrApi.class)
-			.apiKey("WaUMb2iLXPv4jFIV3z58aAYbhUXnxXO2rOw5gPOURIrmMkbup3")
-			.apiSecret("Rlc0dQLFhx8MWyNxRVaPiB8gEBEXQVInyXDjCBe0VPq5QZhOlQ")
-			.build();
-		
-		Scanner in = new Scanner(System.in);
+	public Boolean login() {
 		
 		System.out.println("=== Tumblr's OAuth Workflow ===");
 		System.out.println();
 		
 		// Obtain the Request Token
 		System.out.println("Fetching the Request Token...");
-		Token requestToken = service.getRequestToken();
+		//requestToken = service.getRequestToken();
 		System.out.println("Got the Request Token!");
 		System.out.println();
 		
 		System.out.println("Now go and authorize Amblr here:");
 		System.out.println(service.getAuthorizationUrl(requestToken));
 		
-		System.out.println("And paste the verifier here");
-		System.out.print(">>");
-		Verifier verifier = new Verifier(in.nextLine());
+		return null;
+	}
+	
+	protected void theRest(String verif) {
+		
+		Verifier verifier = new Verifier(verif);
 		System.out.println();
 		
 		// Trade the Request Token and Verfier for the Access Token
@@ -67,6 +74,5 @@ public class TumblrLoginTask extends AsyncTask<String,Void,Boolean>
 		
 		System.out.println();
 		
-		return null;
 	}
 }

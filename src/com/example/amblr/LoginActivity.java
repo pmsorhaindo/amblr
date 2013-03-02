@@ -198,12 +198,16 @@ public class LoginActivity extends Activity {
 	public class UserLoginTask extends AsyncTask<String, Void, Boolean> {
 		@Override
 		protected Boolean doInBackground(String... params) {
+			
 			// TODO: attempt authentication against a network service.
-
 			try {
 				// Simulate network access.
 				Thread.sleep(2000);
 				System.out.println("asdf Though asdf!!!");
+				TumblrLoginTask letsDoThis = new TumblrLoginTask();
+				letsDoThis.login();
+				
+				
 			} catch (InterruptedException e) {
 				return false;
 			}
