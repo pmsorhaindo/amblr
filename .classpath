@@ -8,5 +8,7 @@
 	<classpathentry kind="lib" path="/home/mikey/workspace/includes/java/junit-4.11/junit-4.11.jar"/>
 	<classpathentry kind="lib" path="/home/mikey/workspace/includes/java/commons-codec-1.7/commons-codec-1.7.jar"/>
 	<classpathentry kind="lib" path="/home/mikey/workspace/includes/java/commons-codec-1.7/commons-codec-1.7-javadoc.jar"/>
+	<classpathentry kind="lib" path="libs/signpost-commonshttp4-1.2.1.2.jar"/>
+	<classpathentry kind="lib" path="libs/signpost-core-1.2.1.2.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

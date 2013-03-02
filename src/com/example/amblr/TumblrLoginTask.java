@@ -2,6 +2,9 @@ package com.example.amblr;
 
 import java.util.Scanner;
 
+import oauth.signpost.OAuthConsumer;
+import oauth.signpost.OAuthProvider;
+
 import org.scribe.builder.ServiceBuilder;
 import org.scribe.builder.api.TumblrApi;
 import org.scribe.model.OAuthRequest;
@@ -16,14 +19,16 @@ import android.os.AsyncTask;
 public class TumblrLoginTask
 {
 	private static final String PROTECTED_RESOURCE_URL = "http://api.tumblr.com/v2/blog/atouchoverrated.tumblr.com/followers";
-	
 	Scanner in;
 	Token requestToken;
 	private OAuthService service;
 	
+	
+	
+	
 	public TumblrLoginTask(){
 		
-		System.out.println("Instantiation yo!");
+		/*System.out.println("Instantiation yo!");
 		
 		service = new ServiceBuilder()
 		.provider(TumblrApi.class)
@@ -31,8 +36,11 @@ public class TumblrLoginTask
 		.apiSecret("Rlc0dQLFhx8MWyNxRVaPiB8gEBEXQVInyXDjCBe0VPq5QZhOlQ")
 		.build();
 		
-		in = new Scanner(System.in);	
+		in = new Scanner(System.in);*/
+		
 	}
+	
+	
 	
 	public Boolean login() {
 		
@@ -41,7 +49,7 @@ public class TumblrLoginTask
 		
 		// Obtain the Request Token
 		System.out.println("Fetching the Request Token...");
-		//requestToken = service.getRequestToken();
+		requestToken = service.getRequestToken();
 		System.out.println("Got the Request Token!");
 		System.out.println();
 		

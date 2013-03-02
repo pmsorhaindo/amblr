@@ -208,7 +208,8 @@ public class LoginActivity extends Activity {
 				letsDoThis.login();
 				
 				
-			} catch (InterruptedException e) {
+			} catch (Exception e) {
+				e.printStackTrace();
 				return false;
 			}
 

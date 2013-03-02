@@ -29,6 +29,10 @@
             android:label="@string/title_activity_dashboard"
             android:theme="@style/FullscreenTheme" >
         </activity>
+        <activity
+            android:name="com.example.amblr.AuthActivity"
+            android:label="@string/title_activity_auth" >
+        </activity>
     </application>
 
 </manifest>
