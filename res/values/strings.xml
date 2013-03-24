@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+tumblr_api_consumer_keytumblr_api_consumer_keytumblr_api_consumer_keytumblr_api_consumer_keytumblr_api_consumer_keytumblr_api_consumer_keytumblr_api_consumer_keytumblr_api_consumer_keytumblr_api_consumer_key<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <string name="app_name">Amblr</string>
@@ -8,5 +8,7 @@
     <string name="title_activity_auth">AuthActivity</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-
+    <string name="tumblr_api_consumer_key">WaUMb2iLXPv4jFIV3z58aAYbhUXnxXO2rOw5gPOURIrmMkbup3<string/>
+    <string name="tumblr_api_consumer_secret">Rlc0dQLFhx8MWyNxRVaPiB8gEBEXQVInyXDjCBe0VPq5QZhOlQ<string/>
+        
 </resources>

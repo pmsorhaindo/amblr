@@ -1,33 +1,36 @@
 package com.example.amblr;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 
-import oauth.signpost.OAuthConsumer;
-import oauth.signpost.OAuthProvider;
+import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 
-import org.scribe.builder.ServiceBuilder;
-import org.scribe.builder.api.TumblrApi;
-import org.scribe.model.OAuthRequest;
-import org.scribe.model.Response;
-import org.scribe.model.Token;
-import org.scribe.model.Verb;
-import org.scribe.model.Verifier;
-import org.scribe.oauth.OAuthService;
-
-import android.os.AsyncTask;
-
-public class TumblrLoginTask
+public class TumblrLoginTask extends Activity
 {
 	private static final String PROTECTED_RESOURCE_URL = "http://api.tumblr.com/v2/blog/atouchoverrated.tumblr.com/followers";
-	Scanner in;
-	Token requestToken;
-	private OAuthService service;
 	
+	Scanner in;
+	//Token requestToken;
+	//private OAuthService service;
+	String strConsumerKey = "WaUMb2iLXPv4jFIV3z58aAYbhUXnxXO2rOw5gPOURIrmMkbup3";
+	String strConsumerSecret = "Rlc0dQLFhx8MWyNxRVaPiB8gEBEXQVInyXDjCBe0VPq5QZhOlQ";
+	//String strScope = "";
+	String strCallbackUrl = "ablr-auth://WWW.pmsorhaindo.com/amblr";
+	OAuthHelper helper = null;
 	
 	
 	
 	public TumblrLoginTask(){
 		
+		try {
+			System.out.println("Trying to make a helper");
+			helper = new OAuthHelper(strConsumerKey,strConsumerSecret,strCallbackUrl);
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		/*System.out.println("Instantiation yo!");
 		
 		service = new ServiceBuilder()
@@ -44,7 +47,18 @@ public class TumblrLoginTask
 	
 	public Boolean login() {
 		
-		System.out.println("=== Tumblr's OAuth Workflow ===");
+		try {
+		    //String uri = helper.getRequestToken();
+		    //System.out.println("yo the uri is: "+uri);
+		    //startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("http://www.google.com")));
+		    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"));
+		    startActivity(browserIntent);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+		
+		/*System.out.println("=== Tumblr's OAuth Workflow ===");
 		System.out.println();
 		
 		// Obtain the Request Token
@@ -55,13 +69,13 @@ public class TumblrLoginTask
 		
 		System.out.println("Now go and authorize Amblr here:");
 		System.out.println(service.getAuthorizationUrl(requestToken));
-		
-		return null;
+		*/
+		return true;
 	}
 	
 	protected void theRest(String verif) {
 		
-		Verifier verifier = new Verifier(verif);
+		/*Verifier verifier = new Verifier(verif);
 		System.out.println();
 		
 		// Trade the Request Token and Verfier for the Access Token
@@ -80,7 +94,7 @@ public class TumblrLoginTask
 		System.out.println();
 		System.out.println(response.getBody());
 		
-		System.out.println();
+		System.out.println();*/
 		
 	}
 }

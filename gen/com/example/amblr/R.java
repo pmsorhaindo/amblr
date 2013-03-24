@@ -45,8 +45,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int sign_in_button=0x7f090009;
     }
     public static final class layout {
-        public static final int activity_dashboard=0x7f030000;
-        public static final int activity_login=0x7f030001;
+        public static final int activity_auth=0x7f030000;
+        public static final int activity_dashboard=0x7f030001;
+        public static final int activity_login=0x7f030002;
     }
     public static final class menu {
         public static final int activity_login=0x7f080000;

@@ -4,6 +4,7 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="16" />
@@ -32,6 +33,12 @@
         <activity
             android:name="com.example.amblr.AuthActivity"
             android:label="@string/title_activity_auth" >
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"></action>
+				<category android:name="android.intent.category.DEFAULT"></category>
+				<category android:name="android.intent.category.BROWSABLE"></category>
+				<data android:scheme="amblr-auth"></data>
+			</intent-filter>
         </activity>
     </application>
 
